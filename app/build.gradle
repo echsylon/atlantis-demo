@@ -1,0 +1,41 @@
+// 3rd party plugins definition
+plugins {
+    id 'me.tatarka.retrolambda' version '3.4.0'
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
+
+    defaultConfig {
+        applicationId 'com.echsylon.atlantis.demo'
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName '1.0'
+        vectorDrawables.useSupportLibrary = true
+
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+        }
+        debug {
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+dependencies {
+    debugCompile 'com.echsylon.atlantis:atlantis-extra:0.0.5'
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:design:25.1.0'
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.echsylon.atlantis.demo">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:name=".SampleApplication"
+        android:allowBackup="true"
+        android:label="@string/demo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".HelpActivity"
+            android:label="@string/help"
+            android:parentActivityName=".MainActivity"/>
+
+        <!-- This is only to contaminate the Atlantis Settings activity with
+             the demo apps app theme and set a parent Activity to it. -->
+        <activity
+            android:name="com.echsylon.atlantis.extra.AtlantisSettingsActivity"
+            android:label="@string/demo_settings"
+            android:theme="@style/AppThemeWithActionBar"
+            tools:replace="android:theme,android:label"/>
+
+    </application>
+
+</manifest>
